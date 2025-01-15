@@ -1,36 +1,5 @@
 server:
   port: 8080
-spring:
-  application:
-    name: gateway
-  cloud:
-    nacos:
-      discovery:
-         server-addr: 192.168.115.132:8848
-    gateway:
-      routes:
-        - id: item-service           # 路由的唯一标识，要求唯一
-          uri: lb://item-service   # lb表示从nacos中获取服务,负载均衡
-          predicates:
-            - Path=/items/**,/search/**
-        - id: cart-service
-          uri: lb://cart-service
-          predicates:
-            - Path=/carts/**
-        - id: pay-service
-          uri: lb://pay-service
-          predicates:
-            - Path=/pay-orders/**
-        - id: trade-service
-          uri: lb://trade-service
-          predicates:
-            - Path=/orders/**
-        - id: user-service
-          uri: lb://user-service
-          predicates:
-            - Path=/users/**,/addresses/**
-      default-filters:
-        -  PrintAny=1,2,3
 hm:
   jwt:
     location: classpath:hmall.jks
