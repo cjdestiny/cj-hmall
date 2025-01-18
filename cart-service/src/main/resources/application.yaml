@@ -10,3 +10,9 @@ hm:
     tittle: 黑马商城购物车接口文档
     desc: "黑马商城购物车接口文档"
     basepackage: com.hmall.cart.controller
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090   # 指定sentinel控制台地址
+      http-method-specify: true    # 开启sentinel对http method的校验
