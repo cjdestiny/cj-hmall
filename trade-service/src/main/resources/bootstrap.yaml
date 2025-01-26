@@ -1,8 +1,8 @@
 server:
-  port: 8082
+  port: 8085
 spring:
   application:
-    name: cart-service
+    name: trade-service
   profiles:
     active: dev
   cloud:
@@ -15,7 +15,3 @@ spring:
           - data-id: shared-swagger.yaml
           - data-id: shared-log.yaml
           - data-id: shared-seata.yaml
-
-
-
-
